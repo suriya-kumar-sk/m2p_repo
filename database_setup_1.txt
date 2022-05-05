@@ -1,0 +1,29 @@
+--Add a dependency to create database :
+<dependency>
+   <groupId>org.springframework.boot</groupId>
+   <artifactId>spring-boot-starter-jdbc</artifactId>
+</dependency>
+
+//create the schema.sql file and data.sql file under the classpath src/main/resources directory to connect database.
+
+//add the following properties in the application.yml file
+spring:
+   datasource: 
+      driverClassName: com.mysql.jdbc.Driver
+      url: "jdbc:mysql://localhost:3306/M2p?autoreconnect=true"
+      username: "m2p"
+      password: "m2p"
+
+//JDBCTemplate
+add the Spring Boot Starter JDBC dependency in our build configuration file.
+
+@Autowired
+JdbcTemplate jdbcTemplate;
+
+
+//create database repository for your Spring Boot application.
+
+@Repository
+public class M2PRepository {
+// repository methods
+}
